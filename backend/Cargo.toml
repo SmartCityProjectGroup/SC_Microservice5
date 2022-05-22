@@ -1,0 +1,20 @@
+[package]
+version = "0.1.0"
+name = "backend"
+repository = "https://github.com/MoonZoon/demo"
+authors = ["Martin Kavík <martin@kavik.cz>"]
+description = "MoonZoon demo"
+categories = ["MoonZoon", "example"]
+license = "MIT"
+readme = "../README.md"
+edition = "2021"
+
+[dependencies]
+moon = { git = "https://github.com/MoonZoon/MoonZoon", rev = "15cb619faca5f78a47e08f4af4bfa595f0eb64b1" }
+diesel = { version = "1.4.4", features = ["mysql"]}
+dotenv = "0.15.0"
+lapin = "2.1.1"
+serde_json = "1.0.81"
+tracing = "0.1.34"
+tokio-executor-trait = "2.1.0"
+tokio-reactor-trait = "1.1.0"
