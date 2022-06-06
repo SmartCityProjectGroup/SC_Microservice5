@@ -31,3 +31,6 @@ jobs:
         with:
           push: true
           tags: merlinchiodo/smartcity:Tierheim,merlinchiodo/smartcity:Tierheim_1.0.0-${{ github.sha }}
+          build-args: |
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            AMQP_ADDR=${{ secrets.AMQP_ADDR }}
