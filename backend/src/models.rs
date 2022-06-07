@@ -1,5 +1,3 @@
-use diesel::types::Time;
-
 #[derive(Queryable)]
 pub struct Post {
     pub id: i32,
@@ -27,20 +25,4 @@ pub struct PetProfile {
     pub id: i32,
     pub picture: String,
     pub profiletext: String,
-}
-
-pub enum Appointment_type {
-    course,
-    visit,
-    walk
-}
-
-#[derive(Queryable)]
-pub struct Appointment {
-    pub id: i32,
-    pub a_type: Appointment_type,
-    pub location: String,
-    pub durationMinutes: i32,
-    pub description: String,
-    pub participants: i32,
 }
