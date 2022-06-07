@@ -16,6 +16,7 @@ crate-type = ["cdylib"]
 zoon = { git = "https://github.com/MoonZoon/MoonZoon", rev = "15cb619faca5f78a47e08f4af4bfa595f0eb64b1" }
 rand = { version = "0.8.3", features = ["small_rng", "getrandom"], default-features = false }
 getrandom = { version = "0.2", features = ["js"], default-features = false }
+reqwest = {version = "0.11.10", features = ["blocking"]}
 
 [package.metadata.wasm-pack.profile.release]
 wasm-opt = ['-Oz']

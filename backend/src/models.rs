@@ -1,5 +1,6 @@
 use diesel::types::Time;
 use serde::Deserialize;
+use serde::Serialize;
 use schema::pets;
 use schema::animalShelter;
 use schema::appointments;
@@ -31,16 +32,16 @@ pub struct NewPet {
     pub name: String,
     pub species: Option<String>,
     pub description: Option<String>,
-    pub volunteer_candidate: Option<bool>,
-    pub adopted: Option<bool>,
-    pub holiday_care: Option<bool>,
+    pub volunteer_candidate: bool,
+    pub adopted: bool,
+    pub holiday_care: bool,
     pub animal_shelter_id: Option<u64>,
     pub foster_home_id: Option<u64>,
     pub adopted_by_cit_id: Option<u64>,
     pub pet_profile_id: Option<u64>,
 }
 
-#[derive(Queryable, Identifiable, Associations, PartialEq)]
+#[derive(Queryable, Identifiable, Associations, PartialEq, Serialize)]
 #[belongs_to(AnimalShelter, foreign_key = "animal_shelter_id")]
 #[belongs_to(FosterHome, foreign_key = "foster_home_id")]
 #[belongs_to(Citizen, foreign_key = "adopted_by_cit_id")]
@@ -51,9 +52,9 @@ pub struct Pet {
     pub name: String,
     pub species: Option<String>,
     pub description: Option<String>,
-    pub volunteer_candidate: Option<bool>,
-    pub adopted: Option<bool>,
-    pub holiday_care: Option<bool>,
+    pub volunteer_candidate: bool,
+    pub adopted: bool,
+    pub holiday_care: bool,
     pub animal_shelter_id: Option<u64>,
     pub foster_home_id: Option<u64>,
     pub adopted_by_cit_id: Option<u64>,

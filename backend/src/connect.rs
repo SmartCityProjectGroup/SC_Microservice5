@@ -11,7 +11,7 @@ use diesel::r2d2::ConnectionManager;
 use lapin::{message::DeliveryResult, options::*, publisher_confirm::Confirmation, types::FieldTable,
     BasicProperties, Connection, ConnectionProperties};
 use tracing::info;
-use crate::api::add_new_pet;
+use crate::api::{add_new_pet, show_shelter_pets};
 use crate::web;
 
 pub type DBPool = diesel::r2d2::Pool<ConnectionManager<MysqlConnection>>;
@@ -39,6 +39,7 @@ async fn connect_RabbitMQ() {
 */
 
 pub fn set_server_api_routes(cfg: &mut web::ServiceConfig) {
-    cfg.route("/addpet", web::post().to(add_new_pet)
+    cfg.route("/addpet", web::post().to(add_new_pet))
+        .route("/showShelterPets", web::get().to(show_shelter_pets)
     );
 }
