@@ -34,3 +34,9 @@ jobs:
           build-args: |
             DATABASE_URL=${{ secrets.DATABASE_URL }}
             AMQP_ADDR=${{ secrets.RABBITMQ_URL }}
+          build-args: |
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            AMQP_ADDR=${{ secrets.RABBITMQ_URL }}
+          build-args: |
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            AMQP_ADDR=${{ secrets.RABBITMQ_URL }}

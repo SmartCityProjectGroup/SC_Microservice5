@@ -43,3 +43,13 @@ pub fn set_server_api_routes(cfg: &mut web::ServiceConfig) {
         .route("/showShelterPets", web::get().to(show_shelter_pets)
     );
 }
+pub fn set_server_api_routes(cfg: &mut web::ServiceConfig) {
+    cfg.route("/addpet", web::post().to(add_new_pet))
+        .route("/showShelterPets", web::get().to(show_shelter_pets)
+    );
+}
+pub fn set_server_api_routes(cfg: &mut web::ServiceConfig) {
+    cfg.route("/addpet", web::post().to(add_new_pet))
+        .route("/showShelterPets", web::get().to(show_shelter_pets)
+    );
+}
