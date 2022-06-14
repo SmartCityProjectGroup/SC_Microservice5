@@ -1,0 +1,25 @@
+# This action is a test for your codebase. It uses superlinter, 
+# which tests all common programming languages to specific code conventions.
+# Your code does not work? This Test can probably give you a hint what you did
+# wrong.
+# The VALIDATE_ALL_CODEBASE variable can set to true or false
+# depends if you want to check the whole code (true) or
+# just the new commited code.(false)  
+name: Super-Linter-Tests
+
+on: push
+
+jobs:
+  super-lint:
+      name: Lint the whole code base with superlinter
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout the new commited code
+          uses: actions/checkout@v3
+        
+        - name: Run Super-Linter-Tests
+          uses: github/super-linter@v4
+          env:
+            VALIDATE_ALL_CODEBASE: false
+            DEFAULT_BRANCH: main
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
